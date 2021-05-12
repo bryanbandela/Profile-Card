@@ -1,0 +1,166 @@
+html {
+    box-sizing: border-box;
+    
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dcyan: #19a2ae;
+    --vdblue: #2d3248;
+    --darkgrey: #363638;
+    --dgray: #969696;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
+
+}
+
+section {
+    background-color: var(--dcyan);
+    min-width: 375px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Circles */
+.patterns .p1, 
+.patterns .p2 {
+    height: 450px;
+    z-index: 0;
+    position: absolute;
+    opacity: 0;
+    animation: 2s loading forwards;
+}
+
+.patterns .p1 {
+    top: 0;
+    left: 0;
+    transform: translate(-100px,-100px);
+}
+
+.patterns .p2 {
+    bottom: 0;
+    right: 0;
+    transform: translate(100px,100px);
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+
+
+/* Card */
+
+.card {
+    max-width: 350px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: 2s slideup forwards;
+    
+}
+
+@keyframes slideup {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.card-header {
+    background-image: url(images/bg-pattern-card.svg);
+    background-size: cover;
+    height: 150px;
+}
+
+.card-body {
+    padding: 0 30px 20px;
+    
+}
+
+.card-profile-frame {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 5px solid white;
+    overflow: hidden;
+    margin: -50px auto 20px;
+}
+
+.card-profile-frame img {
+    width: 100%;
+    
+}
+
+
+h2 {
+    color: var(--darkgrey);
+    font-weight: bold;
+}
+
+.name-age {
+    margin-bottom: 1rem;
+}
+
+.stats-name {
+    margin: 1rem;
+}
+
+.name {
+    margin-top: 0.5rem;
+    letter-spacing: 2;
+}
+
+.age, 
+.city, 
+.name {
+    color: var(--dgray);
+}
+
+.age {
+    margin-left: 1rem;
+}
+
+.card-footer {
+    border-top: 1px solid var(--dgray);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem auto 1rem;
+    padding: 1rem;
+    
+}
+
+/* Footer */
+.attribution {
+    text-align: center;
+    padding: 15px;
+    height: auto;
+}
